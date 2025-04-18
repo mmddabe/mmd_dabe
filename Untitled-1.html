@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>class 303 > darkweb 🎀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!--اره کد هارو خودم نوشتم اقای خدابخشی-->
+	<!--  cod ezafe kardan font -->
+  <style>
+    @font-face {
+      font-family: 'BTAHMABD';
+      src: url('/mnt/data/BTAHMABD.TTF') format('truetype');
+    }
+  </style>
+
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'BTAHMABD', sans-serif;
+      direction: rtl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      z-index: -1;
+    }
+
+    .panel {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #000;
+      font-size: 2rem;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-family: 'BTAHMABD', sans-serif;
+    }
+
+    button {
+      background-color: #667eea;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5a67d8;
+    }
+
+    .link {
+      text-align: center;
+      color: #000;
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-decoration: underline;
+    }
+
+    #forgot-form, #register-form {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!--backgrond-->
+  <div id="particles-js"></div>
+
+  <!-- form vorod -->
+  <div class="panel" id="login-form">
+    <h2>برو تو اکانتت 🥰</h2>
+    <form>
+      <input type="text" placeholder="نام کاربری یا جیمیل" required>
+      <input type="password" placeholder="رمز" required>
+      <button type="submit">ورود</button>
+    </form>
+    <div class="link" onclick="showForgotForm()">رمزت یادت رفته؟</div>
+    <div class="link" onclick="showRegisterForm()">اکانت نداری؟ ثبت نام کن</div>
+  </div>
+
+  <div class="panel" id="forgot-form">
+    <h2>بازیابی رمز</h2>
+    <form>
+      <input type="text" placeholder="شماره یا جیمیل" required>
+      <button type="submit">ارسال کد</button>
+    </form>
+    <div class="link" onclick="showLoginForm()">بازگشت به ورود</div>
+  </div>
+
+  <div class="panel" id="register-form">
+    <h2>ثبت‌نام 🎀</h2>
+    <form>
+      <input type="text" placeholder="ID" required>
+      <input type="email" placeholder="جیمیل" required>
+      <input type="password" placeholder="رمز" required>
+	  <input type="password" placeholder="بازم رمز" required>
+      <button type="submit">ثبت‌نام</button>
+    </form>
+    <div class="link" onclick="showLoginForm()">بازگشت به ورود</div>
+  </div>
+
+  <!-- script form -->
+  <script>
+    function showForgotForm() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('forgot-form').style.display = 'block';
+    }
+
+    function showRegisterForm() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('register-form').style.display = 'block';
+    }
+
+    function showLoginForm() {
+      document.getElementById('forgot-form').style.display = 'none';
+      document.getElementById('register-form').style.display = 'none';
+      document.getElementById('login-form').style.display = 'block';
+    }
+  </script>
+
+  <!-- لود particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js',
+      {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": { "enable": true, "value_area": 800 }
+          },
+          "color": { "value": "#ffffff" },
+          "shape": {
+            "type": "circle",
+            "stroke": { "width": 0, "color": "#000000" }
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false
+          },
+          "size": {
+            "value": 3,
+            "random": true
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 4,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out"
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": { "enable": true, "mode": "repulse" },
+            "onclick": { "enable": true, "mode": "push" },
+            "resize": true
+          },
+          "modes": {
+            "repulse": { "distance": 100, "duration": 0.4 },
+            "push": { "particles_nb": 4 }
+          }
+        },
+        "retina_detect": true
+      }
+    );
+	  /* خوشتون اومد ؟*/
+  </script>
+</body>
+</html>
